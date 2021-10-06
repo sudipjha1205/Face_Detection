@@ -1,10 +1,13 @@
 import cv2
 import matplotlib.pyplot as plt
 
+##Training the model
 cascade_classifier = cv2.CascadeClassifier('haarcascade_frontalface_alt.xml')
 
+##Reading the image to detect
 image = cv2.imread('sudip.jpeg')
 
+##Converting the image into gray 
 grey_image = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
 
 detected_faces = cascade_classifier.detectMultiScale(grey_image, scaleFactor=1.1, minNeighbors=10)
